@@ -1,0 +1,146 @@
+:root{
+/* Colors */
+
+/* Primary */
+--cl-red : hsl(1, 90%, 64%);
+--cl-blue : hsl(219, 85%, 26%);
+
+/* Neutral */
+--cl-white : hsl(0, 0%, 100%);
+--cl-grayish-blue-very-light : hsl(210, 60%, 98%);
+--cl-grayish-blue-light-1 : hsl(211, 68%, 94%);
+--cl-grayish-blue-light-2 : hsl(205, 33%, 90%);
+--cl-grayish-blue : hsl(219, 14%, 63%);
+--cl-dark-grayish-blue : hsl(219, 12%, 42%);
+--cl-very-dark-blue: hsl(224, 21%, 14%);
+
+
+/* Typography */
+
+/* Body Copy */
+--fs-body : 16px;
+
+/* Font */
+--ff : 'Plus Jakarta Sans', sans-serif;
+--fw-500 :500;
+--fw-800 :800;
+}
+body{
+    background-color: var(--cl-grayish-blue-very-light);
+    display: grid;
+    place-items: center;
+    font-family: var(--ff);
+    font-weight: var(--fw-500);
+}
+/* General Styling */
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Notification container */
+#notifications_container{
+    width: min(850px, 80vw);
+    margin-top: 2rem;
+    background-color: var(--cl-white);
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+
+/* Notification header */
+#notifications_header{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2.5rem;
+}
+#notifications_header h1{
+    font-weight: var(--fw-800);
+}
+
+#read_all:is(:hover, :focus){
+    color: var(--cl-blue);
+}
+
+#notifications_counter{
+    margin-left: 0.5rem;
+    padding: 0.2rem 0.4rem;
+    border-radius: 5px;
+    background-color: var(--cl-blue);
+    color: white;
+}
+
+/* Notification card styling */
+.notification{
+    display: grid;
+    grid-template-columns: 20% 1fr;
+    padding: 1.5rem 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.2rem;
+}
+
+/* Colors */
+#read_all, .notification_action, .notification_time, .private_message a{
+    color: var(--cl-grayish-blue);
+}
+.notification_link a{
+    color: var(--cl-blue);
+}
+.user_name a{
+    color: var(--cl-very-dark-blue);
+}
+.notification a {
+    font-weight: var(--fw-800);
+}
+
+
+.notification_avatar{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+.notification_avatar img{
+    width: min(70px, 50%);
+}
+
+.notification_text{
+    margin-block: 0.6rem;
+}
+
+/* Unread notifications */
+.notification.unread{
+    background-color: var(--cl-grayish-blue-very-light);
+    cursor: pointer;
+}
+.notification.unread .notification_text::after{
+    display: inline-block;
+    content: '';
+    width: 7px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: var(--cl-red);
+}
+
+/* Notifications with message */
+.private_message{
+    margin-block: 1rem;
+    padding: 1rem;
+    border: 1px solid var(--cl-grayish-blue-light-2);
+    color: var(--cl-grayish-blue);
+}
+.private_message{
+    font-weight: var(--fw-500);
+}
+.private_message:is(:hover, :focus){
+    background-color: var(--cl-grayish-blue-light-1);
+}
+
+/* Notifications with picture */
+
+.notification.picture{
+    display: grid;
+    grid-template-columns: 20% 1fr 10%;
+}
+.commented_pic img{
+    width: max(60px, 50%);
+}
