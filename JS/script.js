@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function(){
     unread_notification_counter = unread_notifications.length
     notification_counter.textContent = unread_notification_counter;
 
-    //When mark all btn click, clear counter and remove unread classes
+    //When mark_all_btn click, clear counter and remove unread classes
     mark_all_btn.addEventListener('click',() =>{
         notification_counter.textContent = '0';
         unread_notifications.forEach((e) =>{
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function(){
     unread_notifications.forEach((e) =>{
         e.addEventListener('click', () =>{
             e.classList.remove('unread');
-            unread_notification_counter -= 1;
+            unread_notification_counter = document.querySelectorAll('.unread').length;
             notification_counter.textContent = unread_notification_counter;
         })
     })

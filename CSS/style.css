@@ -119,6 +119,7 @@ a{
     aspect-ratio: 1;
     border-radius: 50%;
     background-color: var(--cl-red);
+    margin-left: 0.5rem;
 }
 
 /* Notifications with message */
