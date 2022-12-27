@@ -1,4 +1,4 @@
-Résultat visible ici http://damiencuda.com/frontend-mentor-notifications/
+Résultat visible ici https://damiencuda.github.io/notification_page/
 
 
 # Frontend Mentor - Notifications page
